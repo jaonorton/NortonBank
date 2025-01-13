@@ -1,4 +1,4 @@
-﻿using NortonBank.CLI.Classes;
+﻿using NortonBank.CLI.Models;
 using System;
 using System.Collections.Generic;
 
@@ -46,30 +46,53 @@ namespace NortonBank.CLI
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("================================");
-            Console.WriteLine($"====== {mensagem} ======");
+            Console.WriteLine($"===== {mensagem} =====");
             Console.WriteLine("================================");
 
             Console.ResetColor();
         }
 
 
-        static void MenuDoUsuario(User usuario)
-        {
-            MostrarIntroducao($"Olá {usuario.Nome}!");   // pegar nome pelo cpf
+        static void MenuDoUsuario(User usuario){
+            MostrarIntroducao($"Olá {usuario.getName()}!");   // pegar nome pelo cpf
 
             Console.WriteLine("\nSeu saldo é de x ");     // exibir saldo
             Console.WriteLine("\n\nO que deseja fazer?");
-            Console.WriteLine("\n1 - Sacar");
-            Console.WriteLine("\n2 - Depositar");
-            Console.WriteLine("\n3 - Pagar conta");
-            Console.WriteLine("\n4 - Extrato conta corrente");
-            Console.WriteLine("\n5 - Extrato conta poupança");
+            Console.WriteLine("A - Sacar");
+            Console.WriteLine("B - Depositar");
+            Console.WriteLine("C - Pagar conta");
+            Console.WriteLine("D - Extrato conta corrente");
+            Console.WriteLine("E - Extrato conta poupança");
 
-            Console.WriteLine("Olá usuário, tudo bem? O que você quer?");
+            string resposta = Console.ReadLine();
 
-            Console.WriteLine("1 - Visualizar os restaurantes cadastrados");
-            Console.WriteLine("2 - Buscar um item específico");
-            Console.WriteLine("3 - Me cadastrar no sistema");
+            switch (resposta)
+            {
+                case "A":
+                case "a":
+                    
+                    break;
+                case "B":
+                case "b":
+                    
+                    break;
+                case "C":
+                case "c":
+                    
+                    break;
+                case "D":
+                case "d":
+                    
+                    break;
+                case "E":
+                case "e":
+                    
+                    break;
+                default:
+                    
+                    break;
+            }
+
         }
 
         static void AreaLogin()
@@ -79,24 +102,43 @@ namespace NortonBank.CLI
             Console.Write("\n\nPor favor, insira seu cpf -  ");
             string cpf = Console.ReadLine();
 
-            // relizar verificação de cadastro
+            User usuarioLogando = null;
+            
+            foreach (User usuarios in usuariosCadastrados)  // pegar perfil do usuario
+            {
+                if (usuarios.getCpf() == cpf)
+                {
+                    usuarioLogando = usuarios;
+                    break;
+                }
+            }
+            if (usuarioLogando == null)     // relizar verificação de cadastro
+            {
+                Console.WriteLine("usuario não cadastrado");
+                //voltar para a parte de login
+            } 
 
             // pedir senha se o usuário existir 
 
-            User usuarioLogando = 
-            // pegar perfil do usuario
-
-
-            MenuDoUsuario(cpf);
+            MenuDoUsuario(usuarioLogando);
         }
                 
-
         static void AreaCadastro()
         {
             Console.WriteLine("Digite o cpf");
             string cpf = Console.ReadLine();
-            // verificar se já existe cadastro
+            User usuarioLogando = null;
 
+            // verificar se já existe cadastro
+            foreach (User usuarios in usuariosCadastrados)  // pegar perfil do usuario
+            {
+                if (usuarios.getCpf() == cpf)
+                {
+                    usuarioLogando = usuarios;
+                    break;
+                }
+            }
+        
             Console.WriteLine("Digite o seu nome");
             string nome = Console.ReadLine();
 

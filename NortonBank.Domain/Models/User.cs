@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NortonBank.CLI.Classes
+namespace NortonBank.CLI.Models
 {
     public class User
     {
@@ -19,5 +19,23 @@ namespace NortonBank.CLI.Classes
             this.Email = email;
             this.Password = password;
         }
+
+        public void setCpf(string cpf)
+        {
+            this.Cpf = cpf;
+        }
+        public string getCpf()
+        {
+            return this.Cpf;
+        }
+        public void setName(string name)
+        {
+            this.Name = name;
+        }
+        public string getName()
+        {
+            return this.Name;
+        }
+
     }
 }

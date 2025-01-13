@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NortonBank.CLI", "NortonBank.CLI.csproj", "{D87D4B25-B342-41E7-AF05-4462ED1FB6B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NortonBank.Domain", "..\NortonBank.Domain\NortonBank.Domain.csproj", "{F4DAE62C-C68C-4560-8395-EF877CE73BFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D87D4B25-B342-41E7-AF05-4462ED1FB6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D87D4B25-B342-41E7-AF05-4462ED1FB6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D87D4B25-B342-41E7-AF05-4462ED1FB6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

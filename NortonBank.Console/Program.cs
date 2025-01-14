@@ -1,4 +1,5 @@
 ﻿using NortonBank.CLI.Models;
+using NortonBank.Domain.Services;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +7,7 @@ namespace NortonBank.CLI
 {
     internal class Program
     {
-        private static List<User> usuariosCadastrados = new List<User>();
+        static new UserServices userServices = new UserServices();
         static void Main(string[] args)
         {
             bool pediuPraSair = false;
@@ -51,8 +52,6 @@ namespace NortonBank.CLI
 
             Console.ResetColor();
         }
-
-
         static void MenuDoUsuario(User usuario){
             MostrarIntroducao($"Olá {usuario.getName()}!");   // pegar nome pelo cpf
 
@@ -99,26 +98,16 @@ namespace NortonBank.CLI
         {
             MostrarIntroducao("Seja bem vindo de volta!");
 
-            Console.Write("\n\nPor favor, insira seu cpf -  ");
+            Console.Write("\nPor favor, insira seu cpf: ");
             string cpf = Console.ReadLine();
 
-            User usuarioLogando = null;
-            
-            foreach (User usuarios in usuariosCadastrados)  // pegar perfil do usuario
-            {
-                if (usuarios.getCpf() == cpf)
-                {
-                    usuarioLogando = usuarios;
-                    break;
-                }
-            }
-            if (usuarioLogando == null)     // relizar verificação de cadastro
+            if (!userServices.JaExisteCadastro(cpf))     
             {
                 Console.WriteLine("usuario não cadastrado");
                 //voltar para a parte de login
             } 
 
-            // pedir senha se o usuário existir 
+            User usuarioLogando = userServices.GetUsuarioPorCpf(cpf);
 
             MenuDoUsuario(usuarioLogando);
         }
@@ -127,18 +116,14 @@ namespace NortonBank.CLI
         {
             Console.WriteLine("Digite o cpf");
             string cpf = Console.ReadLine();
-            User usuarioLogando = null;
 
             // verificar se já existe cadastro
-            foreach (User usuarios in usuariosCadastrados)  // pegar perfil do usuario
-            {
-                if (usuarios.getCpf() == cpf)
-                {
-                    usuarioLogando = usuarios;
-                    break;
-                }
-            }
-        
+                // sim: jogar para loguin
+                // não: continuar
+
+                      
+            
+       
             Console.WriteLine("Digite o seu nome");
             string nome = Console.ReadLine();
 
@@ -149,7 +134,7 @@ namespace NortonBank.CLI
             string senha = Console.ReadLine();
 
             User usuarioASerCadastrado = new User(cpf, nome, email, senha);
-            usuariosCadastrados.Add(usuarioASerCadastrado);
+            userServices.CadastrarUsuario(usuarioASerCadastrado);
             AreaLogin();
         }
                 

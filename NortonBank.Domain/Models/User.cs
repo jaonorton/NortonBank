@@ -21,22 +21,17 @@ namespace NortonBank.CLI.Models
             this.Password = password;
         }
 
-        public void setCpf(string cpf)
-        {
-            this.Cpf = cpf;
-        }
-        public string getCpf()
-        {
-            return this.Cpf;
-        }
-        public void setName(string name)
-        {
-            this.Name = name;
-        }
-        public string getName()
-        {
-            return this.Name;
-        }
+        public void setCpf(string cpf) {this.Cpf = cpf;}
+        public string getCpf() {return this.Cpf;}
+
+        public void setName(string name) {this.Name = name;}
+        public string getName() {return this.Name;}
+
+        public void setEmail(string email) {this.Name = email;}
+        public string getEmail() {return this.Name;}
+
+        public void setId(int id) {this.Id = id;}
+        public int getId() {return this.Id;}
 
     }
 }

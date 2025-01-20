@@ -6,9 +6,9 @@ namespace NortonBank.Domain.Models
 {
     public abstract class Account
     {
-        private int Agencia;
-        private int Numero;
-        private int IdTitular;
+        public int Agencia { get; set; }
+        public int Numero { get; set; }
+        public int IdTitular { get; set; }
 
         protected double Saldo;     // essa classe e filhos tem acesso
 

@@ -21,19 +21,19 @@ namespace NortonBank.Domain.Services        // aqui que ficam as regras de negó
         }
 
         public User GetUsuarioPorId(int id) {
-            return UserDAO.Users.Where(item => item.getId() == id).First();
+            return UserDAO.Users.Where(item => item.Id == id).First();
         }
         public User GetUsuarioPorEmail(string email) {
-            return UserDAO.Users.Where(item => item.getEmail() == email).First();
+            return UserDAO.Users.Where(item => item.Email == email).First();
         }
         public User GetUsuarioPorCpf(string cpf){
-            return UserDAO.Users.Where(item => item.getCpf() == cpf).First();
+            return UserDAO.Users.Where(item => item.Cpf == cpf).First();
         }
 
         public void AtualizarNome(int idUsuarioASerAtualizado, string novoNome)
         {
             User usuarioASerAtualizado = GetUsuarioPorId(idUsuarioASerAtualizado);
-            usuarioASerAtualizado.setName(novoNome);
+            usuarioASerAtualizado.Name = novoNome;
         }
         public void RemoverUsuario(int idUsuarioASerRemovido)
         {
@@ -42,7 +42,7 @@ namespace NortonBank.Domain.Services        // aqui que ficam as regras de negó
         
         public bool JaExisteCadastro(string cpf)    // retorna true se for cadastrado
         {
-            User usuarioASerEncontrado = UserDAO.Users.Where(x => x.getCpf() == cpf).First();
+            User usuarioASerEncontrado = UserDAO.Users.Where(x => x.Cpf == cpf).First();
             return UserDAO.Users.Contains(usuarioASerEncontrado);
         }
     }

@@ -60,7 +60,7 @@ namespace NortonBank.CLI
         }
         public static void MenuInicialDoUsuario(User usuario)
         {
-            Utilitarios.MostrarIntroducao($"Olá {usuario.getName()}!");   // pegar nome pelo cpf
+            Utilitarios.MostrarIntroducao($"Olá {usuario.Name}!");   // pegar nome pelo cpf
 
             Console.WriteLine("\nSeu saldo corrente é de x ");     // exibir saldo
             Console.WriteLine("\n\nO que deseja fazer?");

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NortonBank.Domain.Models
 {
-    class Checking : Account    // herança
+    public class Savings : Account    // herança
     {
 
     }

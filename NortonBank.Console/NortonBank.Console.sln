@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NortonBank.CLI", "NortonBan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NortonBank.Domain", "..\NortonBank.Domain\NortonBank.Domain.csproj", "{F4DAE62C-C68C-4560-8395-EF877CE73BFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NortonBank.Domain.Test.Unit", "..\NortonBank.Domain.Test.Unit\NortonBank.Domain.Test.Unit.csproj", "{54B56A8B-E601-482A-8D86-65FE0BC37702}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4DAE62C-C68C-4560-8395-EF877CE73BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B56A8B-E601-482A-8D86-65FE0BC37702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B56A8B-E601-482A-8D86-65FE0BC37702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B56A8B-E601-482A-8D86-65FE0BC37702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B56A8B-E601-482A-8D86-65FE0BC37702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

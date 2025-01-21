@@ -45,5 +45,12 @@ namespace NortonBank.Domain.Services        // aqui que ficam as regras de negó
             User usuarioASerEncontrado = UserDAO.Users.Where(x => x.Cpf == cpf).First();
             return UserDAO.Users.Contains(usuarioASerEncontrado);
         }
+        public bool VerificarMaioridade(User user)
+        {
+            if (user.Age >= 18) 
+                return true;
+
+            return false;
+        }
     }
 }

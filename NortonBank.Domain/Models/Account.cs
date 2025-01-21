@@ -12,13 +12,5 @@ namespace NortonBank.Domain.Models
 
         protected double Saldo;     // essa classe e filhos tem acesso
 
-        public void Depoistar(decimal depoistar)
-        {
-            
-        }
-        public void Sacar(decimal saque)
-        {
-            
-        }
     }
 }
